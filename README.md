@@ -1,6 +1,6 @@
 # AlgoSolver
 
-[![](https://img.shields.io/badge/project-link-green)](https://github.com/timkpaine/temporal-cache-js)
+[![](https://img.shields.io/badge/project-link-green)](https://www.apache.org/licenses/LICENSE-2.0)
 
 
 ## Overview
