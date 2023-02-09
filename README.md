@@ -1,6 +1,6 @@
 # AlgoSolver
 
-[![](https://img.shields.io/badge/project-link-green)](https://www.apache.org/licenses/LICENSE-2.0)
+[![](https://img.shields.io/badge/license-link-green)](https://www.apache.org/licenses/LICENSE-2.0)
 
 
 ## Overview
