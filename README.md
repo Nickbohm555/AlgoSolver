@@ -4,7 +4,6 @@
 [![](https://img.shields.io/badge/license-Apache-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![](https://img.shields.io/github/issues/nickbohm555/AlgoSolver)](https://github.com/Nickbohm555/AlgoSolver/issues)
 
-[![](https://img.shields.io/badge/license-link-green)](https://www.apache.org/licenses/LICENSE-2.0)
 
 
 ## Overview
