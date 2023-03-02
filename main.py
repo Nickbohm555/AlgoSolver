@@ -18,11 +18,11 @@ graph = {'A': set(['B', 'C']),
 
 def main():
     # testable function 1
-    print(Sorting.RadixSort([15,3,222,11,8]))
+    print(Sorting.RadixSort([15, 3, 222, 11, 8]))
 
     # testable function 2
-    print(Searching.SelectionAlgo([15,3,222,11,8], 1))
-    
+    print(Searching.SelectionAlgo([15, 3, 222, 11, 8], 1))
+
     # testable function 3
     print(Graphs.Bfs(graph, 'A'))
 
@@ -30,10 +30,23 @@ def main():
     print(Graphs.Dfs(graph, 'A'))
 
     # testable function 5
-    print(Sorting.QuickSort([15,3,222,11,8], 1))
+    print(Sorting.QuickSort([15, 3, 222, 11, 8]))
+
+    # testable function 6
+    print(Searching.BinarySearch([1, 10, 20, 50, 100, 200], 50))
+
+    # testable function 7
+    print(Sorting.BubbleSort([15, 3, 222, 11, 8]))
+
+    # testable function 8
+    print(Sorting.BucketSort([15, 3, 222, 11, 8]))
+
+    # testable function 9
+    print(Sorting.InsertionSort([15, 3, 222, 11, 8]))
+
+    # testable function 10
+    print(Sorting.MergeSort([15, 3, 222, 11, 8]))
     """ Main entry point of the app """
-    
-    
 
 
 if __name__ == "__main__":
