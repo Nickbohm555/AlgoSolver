@@ -1,10 +1,12 @@
 """testing page."""
+import unittest
 import sys
 sys.path.append('../')
-import unittest
-from AlgoSolver.graphs import *
-from AlgoSolver.sorting import *
 from AlgoSolver.searching import *
+from AlgoSolver.sorting import *
+from AlgoSolver.graphs import *
+
+
 
 # importing
 
@@ -60,7 +62,7 @@ class TestMethods(unittest.TestCase):
         """insertin sort test."""
         self.assertEqual(insertion_sort(
             [15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
-        
+
     def test_bfs_dfs_integration(self):
         """insertin sort test."""
         # Create a sample graph to test the integration between bfs and dfs
