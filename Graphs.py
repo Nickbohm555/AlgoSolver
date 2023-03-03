@@ -1,7 +1,10 @@
+"""graph algorithms."""
 from collections import deque
 import heapq
 
-def Bfs(graph, start):
+
+def bfs(graph, start):
+    """bfs algorithms."""
     visited = set()
     queue = deque([start])
 
@@ -13,7 +16,9 @@ def Bfs(graph, start):
 
     return visited
 
-def Dfs(graph, start):
+
+def dfs(graph, start):
+    """dfs algorithms."""
     visited = set()
 
     def dfs_helper(vertex):
@@ -25,18 +30,20 @@ def Dfs(graph, start):
     dfs_helper(start)
     return visited
 
-def Djikstras(graph, start):
+
+def djikstras(graph, start):
+    """djikstras algorithms."""
     # Initialize the distances and visited sets
     distances = {vertex: float('inf') for vertex in graph}
     distances[start] = 0
     visited = set()
 
     # Create a priority queue and add the starting vertex
-    pq = [(0, start)]
+    priority_queue = [(0, start)]
 
-    while pq:
+    while priority_queue:
         # Get the vertex with the smallest distance
-        current_distance, current_vertex = heapq.heappop(pq)
+        current_distance, current_vertex = heapq.heappop(priority_queue)
 
         # Ignore visited vertices
         if current_vertex in visited:
@@ -50,18 +57,26 @@ def Djikstras(graph, start):
             distance = current_distance + weight
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
-                heapq.heappush(pq, (distance, neighbor))
+                heapq.heappush(priority_queue, (distance, neighbor))
 
     return distances
 
-def BellmanFord():
+
+def bellman_ford():
+    """bellman_ford algorithms."""
     print('BellmanFord')
 
-def Kruskals():
+
+def kruskals():
+    """kruskals algorithms."""
     print('Kruskals')
 
-def Prims():
+
+def prims():
+    """prims algorithms."""
     print('Prims')
 
-def NetworkFlow():
+
+def network_flow():
+    """network_flow algorithms."""
     print('NetworkFlow')

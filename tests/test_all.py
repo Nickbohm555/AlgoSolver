@@ -1,49 +1,84 @@
-from Searching import *
-from Sorting import *
-from Graphs import *
+"""testing page."""
+import sys
+sys.path.append('../')
 import unittest
+from AlgoSolver.graphs import *
+from AlgoSolver.sorting import *
+from AlgoSolver.searching import *
+
+# importing
 
 
 class TestMethods(unittest.TestCase):
+    """class to test all methods."""
+
     def test_radix(self):
-        self.assertEqual(RadixSort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        """testing radix_sort."""
+        self.assertEqual(radix_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_selection_algo(self):
-        self.assertEqual(SelectionAlgo([15, 3, 222, 11, 8], 1), 8)
+        """testing selection_sort."""
+        self.assertEqual(selection_algo([15, 3, 222, 11, 8], 1), 8)
 
     def test_bfs(self):
+        """testing bfs."""
         graph = {'A': set(['B', 'C']),
                  'B': set(['A', 'D', 'E']),
                  'C': set(['A', 'F']),
                  'D': set(['B']),
                  'E': set(['B', 'F']),
                  'F': set(['C', 'E'])}
-        self.assertEqual(Bfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
+        self.assertEqual(bfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
 
     def test_dfs(self):
+        """testing dfs."""
         graph = {'A': set(['B', 'C']),
                  'B': set(['A', 'D', 'E']),
                  'C': set(['A', 'F']),
                  'D': set(['B']),
                  'E': set(['B', 'F']),
                  'F': set(['C', 'E'])}
-        self.assertEqual(Dfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
+        self.assertEqual(dfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
 
     def test_quicksort(self):
-        self.assertEqual(QuickSort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        """quicksort test."""
+        self.assertEqual(quick_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_binary_search(self):
-        self.assertEqual(BinarySearch([1, 10, 20, 50, 100, 200], 50), 3)
+        """binary search test."""
+        self.assertEqual(binary_search([1, 10, 20, 50, 100, 200], 50), 3)
 
     def test_bubble_sort(self):
-        self.assertEqual(BubbleSort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        """bubble sort test."""
+        self.assertEqual(bubble_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_bucket_sort(self):
-        self.assertEqual(BucketSort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        """bucket sort test."""
+        self.assertEqual(bucket_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_insertion_sort(self):
-        self.assertEqual(InsertionSort(
+        """insertin sort test."""
+        self.assertEqual(insertion_sort(
             [15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        
+    def test_bfs_dfs_integration(self):
+        """insertin sort test."""
+        # Create a sample graph to test the integration between bfs and dfs
+        graph = {'A': set(['B', 'C']),
+                 'B': set(['A', 'D', 'E']),
+                 'C': set(['A', 'F']),
+                 'D': set(['B']),
+                 'E': set(['B', 'F']),
+                 'F': set(['C', 'E'])}
+
+        # Run a bfs search on the graph
+        bfs_result = bfs(graph, 'A')
+
+        # Run a dfs search on the graph
+        dfs_result = dfs(graph, 'A')
+
+        # Check that the bfs and dfs searches return the same set of nodes
+        self.assertEqual(bfs_result, dfs_result)
 
 
 if __name__ == "__main__":

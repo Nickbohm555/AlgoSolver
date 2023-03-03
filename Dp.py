@@ -1,9 +1,11 @@
+"""graph algorithms."""
 
 
-# 1D DP tests
-
-def OneD_Dp():
+def one_dp():
+    """one dimentional dp algorithms."""
     print("to do")
 
-def TwoD_Dp():
+
+def two_dp():
+    """two dimentional dp algorithms."""
     print("to do")
