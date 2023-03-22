@@ -1,11 +1,11 @@
 """testing page."""
 import unittest
 import sys
-sys.path.append('../')
-from AlgoSolver.searching import *
-from AlgoSolver.sorting import *
-from AlgoSolver.graphs import *
 
+sys.path.append('../')
+from AlgoSolver.Algo_Solver.searching import *
+from AlgoSolver.Algo_Solver.sorting import *
+from AlgoSolver.Algo_Solver.graphs import *
 
 
 # importing
@@ -24,22 +24,26 @@ class TestMethods(unittest.TestCase):
 
     def test_bfs(self):
         """testing bfs."""
-        graph = {'A': set(['B', 'C']),
-                 'B': set(['A', 'D', 'E']),
-                 'C': set(['A', 'F']),
-                 'D': set(['B']),
-                 'E': set(['B', 'F']),
-                 'F': set(['C', 'E'])}
+        graph = {
+            'A': set(['B', 'C']),
+            'B': set(['A', 'D', 'E']),
+            'C': set(['A', 'F']),
+            'D': set(['B']),
+            'E': set(['B', 'F']),
+            'F': set(['C', 'E']),
+        }
         self.assertEqual(bfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
 
     def test_dfs(self):
         """testing dfs."""
-        graph = {'A': set(['B', 'C']),
-                 'B': set(['A', 'D', 'E']),
-                 'C': set(['A', 'F']),
-                 'D': set(['B']),
-                 'E': set(['B', 'F']),
-                 'F': set(['C', 'E'])}
+        graph = {
+            'A': set(['B', 'C']),
+            'B': set(['A', 'D', 'E']),
+            'C': set(['A', 'F']),
+            'D': set(['B']),
+            'E': set(['B', 'F']),
+            'F': set(['C', 'E']),
+        }
         self.assertEqual(dfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
 
     def test_quicksort(self):
@@ -60,18 +64,19 @@ class TestMethods(unittest.TestCase):
 
     def test_insertion_sort(self):
         """insertin sort test."""
-        self.assertEqual(insertion_sort(
-            [15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+        self.assertEqual(insertion_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_bfs_dfs_integration(self):
         """insertin sort test."""
         # Create a sample graph to test the integration between bfs and dfs
-        graph = {'A': set(['B', 'C']),
-                 'B': set(['A', 'D', 'E']),
-                 'C': set(['A', 'F']),
-                 'D': set(['B']),
-                 'E': set(['B', 'F']),
-                 'F': set(['C', 'E'])}
+        graph = {
+            'A': set(['B', 'C']),
+            'B': set(['A', 'D', 'E']),
+            'C': set(['A', 'F']),
+            'D': set(['B']),
+            'E': set(['B', 'F']),
+            'F': set(['C', 'E']),
+        }
 
         # Run a bfs search on the graph
         bfs_result = bfs(graph, 'A')

@@ -5,6 +5,10 @@
 [![](https://img.shields.io/github/issues/nickbohm555/AlgoSolver)](https://github.com/Nickbohm555/AlgoSolver/issues)
 
 
+[![Build Status](https://github.com/Nickbohm555/AlgoSolver/actions?query=branch%3Amain)](https://github.com/Nickbohm555/AlgoSolver/actions?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/ColumbiaOSS/example-project-python/branch/main/graph/badge.svg)](https://codecov.io/gh/ColumbiaOSS/example-project-python)
+[![PyPI](https://img.shields.io/pypi/v/example-project-python)](https://pypi.org/project/example-project-python/)
+
 
 ## Overview
 My goal is to develop a library in python to help programmers solve a variety of algorithms style questions. For example, with Dynamic Programming problems the main things we need to know are if we are using a 1D of 2D array, what the base case is, and what the recurrence relation is. With this in mind, we can create multiple templates for different types of questions to take out the implementation process. I wanted to have a special focus on graph algorithms for the library. This will allow programmers to spend more of their time thinking about high level design questions.
