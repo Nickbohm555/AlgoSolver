@@ -4,9 +4,10 @@
 [![](https://img.shields.io/badge/license-Apache-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![](https://img.shields.io/github/issues/nickbohm555/AlgoSolver)](https://github.com/Nickbohm555/AlgoSolver/issues)
 
+[![Build Status](https://github.com/ColumbiaOSS/example-project-python/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/Nickbohm555/AlgoSolver/actions?query=branch%3Amain)
 
-[![Build Status](https://github.com/Nickbohm555/AlgoSolver/actions?query=branch%3Amain)](https://github.com/Nickbohm555/AlgoSolver/actions?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/ColumbiaOSS/example-project-python/branch/main/graph/badge.svg)](https://codecov.io/gh/ColumbiaOSS/example-project-python)
+[![codecov](https://codecov.io/gh/ColumbiaOSS/example-project-python/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Nickbohm555/AlgoSolver/tree/hw5)
+
 [![PyPI](https://img.shields.io/pypi/v/example-project-python)](https://pypi.org/project/example-project-python/)
 
 

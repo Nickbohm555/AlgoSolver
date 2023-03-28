@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - hw5
+      - main
     tags:
       - v*
     paths-ignore:
