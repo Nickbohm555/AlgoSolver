@@ -5,7 +5,7 @@
 [![](https://img.shields.io/github/issues/nickbohm555/AlgoSolver)](https://github.com/Nickbohm555/AlgoSolver/issues)
 [![Build Status](https://github.com/nickbohm555/AlgoSolver/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/Nickbohm555/AlgoSolver/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/nickbohm555/AlgoSolver/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Nickbohm555/AlgoSolver/tree/main)
-[![PyPI](https://img.shields.io/pypi/v/AlgoSolver)](https://pypi.org/project/AlgoSolver/)
+
 
 
 ## Overview
