@@ -1,6 +1,6 @@
 """main page which includes my functions."""
 __author__ = "Nicholas Bohm"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __license__ = "MIT"
 
 
