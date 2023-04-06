@@ -128,5 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# other
-scraped_data/
+docs/_build
+docs/_static
+docs/_templates
+.DS_Store
+
+

@@ -6,7 +6,7 @@
 [![Build Status](https://github.com/Nickbohm555/AlgoSolver/actions/workflows/build.yml/badge.svg)](https://github.com/Nickbohm555/AlgoSolver/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/nickbohm555/AlgoSolver/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Nickbohm555/AlgoSolver/tree/main)
 [![PyPI](https://img.shields.io/pypi/v/AlgoSolver)](https://pypi.org/project/AlgoSolver/0.1.2/)
-
+[![readthedocs](https://img.shields.io/badge/docs-passing-green)](https://algosolver.readthedocs.io/en/latest/) 
 
 
 ## Overview
