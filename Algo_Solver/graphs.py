@@ -1,9 +1,26 @@
-"""graph algorithms."""
+"""
+This module provides utilities for graph algorithms.
+
+Functions:
+- `bfs`: Retrieved every element reachable from starting point using bfs technique.
+- `dfs`: Retrieved every element reachable from starting point using dfs technique.
+
+"""
+
 from collections import deque
 
 
 def bfs(graph, start):
-    """bfs algorithms."""
+    """
+    Performs breadth first search on a graph with a given starting point.
+
+    Args:
+        graph (dict): The graph we are traversing.
+        start (int): The starting node to traverse from.
+
+    Returns:
+        set: The set of all nodes we visit.
+    """
     visited = set()
     queue = deque([start])
 
@@ -17,7 +34,16 @@ def bfs(graph, start):
 
 
 def dfs(graph, start):
-    """dfs algorithms."""
+    """
+    Performs depth first search on a graph with a given starting point.
+
+    Args:
+        graph (dict): The graph we are traversing.
+        start (int): The starting node to traverse from.
+
+    Returns:
+        set: The set of all nodes we visit.
+    """
     visited = set()
 
     def dfs_helper(vertex):
@@ -40,20 +66,18 @@ def find_distance_unweighted_graph(graph, start, end):
         end (int): The destination we are trying to reach.
 
     Returns:
-        int: The distance from start to end of an unweighted graph.
+        int: The distance fom start to end of an unweighted graph.
     """
     visited = set()
-    d = {}
-    d[start] = 0
-    queue = deque([(start, 0)])  # Store each node with its distance from the start
+    queue = deque([start])
+    dist = {}
+
     while queue:
-        vertex, distance = queue.popleft()
-        if vertex == end:
-            return distance  # We have reached the destination
+        vertex = queue.popleft()
         if vertex not in visited:
             visited.add(vertex)
-            for neighbor in graph[vertex]:
-                if neighbor not in visited:
-                    d[neighbor] = distance + 1
-                    queue.append((neighbor, distance + 1))  # Add neighbor with its distance from start
-    return -1  # We have explored the entire graph and did not find the destination
+            queue.extend(graph[vertex] - visited)
+            dist[vertex] = dist.get(vertex, 0) + 1
+            if vertex == end:
+                return dist[vertex]
+    return -1
