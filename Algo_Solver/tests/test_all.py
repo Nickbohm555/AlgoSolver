@@ -87,6 +87,19 @@ class TestMethods(unittest.TestCase):
         # Check that the bfs and dfs searches return the same set of nodes
         self.assertEqual(bfs_result, dfs_result)
 
+    def test_find_distance_unweighted_graph(self):
+        """find_distance_unweighted_graph test."""
+
+        graph = {
+            'A': set(['B', 'C']),
+            'B': set(['A', 'D', 'E']),
+            'C': set(['A', 'F']),
+            'D': set(['B']),
+            'E': set(['B', 'F']),
+            'F': set(['C', 'E']),
+        }
+        self.assertEqual(find_distance_unweighted_graph(graph, 'A', 'F'), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
