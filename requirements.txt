@@ -131,7 +131,7 @@ seaborn==0.11.2
 Send2Trash==1.8.0
 six==1.15.0
 SQLAlchemy==1.4.41
-sqlparse==0.4.3
+sqlparse==0.4.4
 stream-chat==3.17.0
 tensorboard==2.6.0
 tensorboard-data-server==0.6.1
