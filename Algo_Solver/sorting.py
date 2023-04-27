@@ -1,20 +1,25 @@
 """
-This module provides utilities for sorting arrays.
+These API's provides utilities for sorting arrays.
 
 Functions:
-- `bubble_sort`: Sorts array by swapping every adjacent pair.
-- `insertion_sort`: Sorts array by swapping each element until it is in the right spot.
-- `merge_sort`: Sorts array by reducing each array until it is 1 element then sorting individually.
-- `quick_sort`: Sorts array by reducing each array by choosing a pivot and sorting accordingly.
-- `radix_sort`: Sorts array based off the digits.
-- `counting_sort`: Sorts array based off the pidgeonhole principle.
+ `bubble_sort`: Sorts array by swapping every adjacent pair.
+
+ `insertion_sort`: Sorts array by swapping each element until it is in the right spot.
+
+ `merge_sort`: Sorts array by reducing each array until it is 1 element then sorting individually.
+
+ `quick_sort`: Sorts array by reducing each array by choosing a pivot and sorting accordingly.
+
+ `radix_sort`: Sorts array based off the digits.
+ 
+ `counting_sort`: Sorts array based off the pidgeonhole principle.
 
 """
 
 
 def bubble_sort(arr):
     """
-    Performs bubble sort on an array to sort it.
+    This algorithm performs bubble sort on an array to sort it.
 
     Args:
         arr (array): The array we are given.

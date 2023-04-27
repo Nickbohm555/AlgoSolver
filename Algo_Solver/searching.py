@@ -1,9 +1,10 @@
 """
-This module provides utilities for searching algorithms.
+These API's provides utilities for searching algorithms.
 
 Functions:
-- `binary_search`: Performs binary search on an array to find the index of the number.
-- `selection_algo`: Performs the selection sort algorithm to find the number associated with the index.
+ `binary_search`: Performs binary search on an array to find the index of the number.
+ 
+ `selection_algo`: Performs the selection sort algorithm to find the number associated with the index.
 
 """
 import random

@@ -1,9 +1,10 @@
 """
-This module provides utilities for graph algorithms.
+These API's provides utilities for graph algorithms.
 
 Functions:
-- `bfs`: Retrieved every element reachable from starting point using bfs technique.
-- `dfs`: Retrieved every element reachable from starting point using dfs technique.
+ `bfs`: Retrieved every element reachable from starting point using bfs technique.
+
+ `dfs`: Retrieved every element reachable from starting point using dfs technique.
 
 """
 
