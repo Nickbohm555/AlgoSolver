@@ -69,16 +69,112 @@ def find_distance_unweighted_graph(graph, start, end):
     Returns:
         int: The distance fom start to end of an unweighted graph.
     """
-    visited = set()
-    queue = deque([start])
-    dist = {}
 
+    visited = set()
+    queue = deque([(start, 0)])
+    
     while queue:
-        vertex = queue.popleft()
+        vertex, distance = queue.popleft()
+        
         if vertex not in visited:
             visited.add(vertex)
-            queue.extend(graph[vertex] - visited)
-            dist[vertex] = dist.get(vertex, 0) + 1
+            
             if vertex == end:
-                return dist[vertex]
+                return distance
+            
+            for neighbor in graph[vertex]:
+                if neighbor not in visited:
+                    queue.append((neighbor, distance + 1))
+    
     return -1
+
+
+def dfs(graph, start):
+    """
+    Performs depth first search on a graph with a given starting point.
+
+    Args:
+        graph (dict): The graph we are traversing.
+        start (int): The starting node to traverse from.
+
+    Returns:
+        set: The set of all nodes we visit.
+    """
+    visited = set()
+
+    def dfs_helper(vertex):
+        visited.add(vertex)
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                dfs_helper(neighbor)
+
+    dfs_helper(start)
+    return visited
+
+import heapq
+
+def dijkstra(graph, start):
+    """
+    Computes the shortest path to every node in a graph using Dijkstra's Algorithm.
+
+    Args:
+        graph (dict): The graph we are traversing.
+        start (int): The starting node to find shortest paths from.
+
+    Returns:
+        dict: A dictionary containing the shortest distance to each node from the starting node.
+    """
+    
+    distance = {node: float('inf') for node in graph}
+    distance[start] = 0
+
+    
+    queue = [(0, start)]
+
+    while queue:
+        
+        current_distance, current_node = heapq.heappop(queue)
+
+        
+        if current_distance > distance[current_node]:
+            continue
+
+       
+        for neighbor, weight in graph[current_node].items():
+            new_distance = current_distance + weight
+            if new_distance < distance[neighbor]:
+                distance[neighbor] = new_distance
+                heapq.heappush(queue, (new_distance, neighbor))
+
+    return distance
+
+def topological_sort(graph):
+    """
+    Sorts a directed acyclic graph in topological order.
+
+    Args:
+        graph (dict): The directed acyclic graph to sort.
+
+    Returns:
+        list: The nodes of the graph in topological order.
+    """
+    in_degrees = {node: 0 for node in graph}
+    for node in graph:
+        for neighbor in graph[node]:
+            in_degrees[neighbor] += 1
+
+    queue = []
+    for node in in_degrees:
+        if in_degrees[node] == 0:
+            queue.append(node)
+
+    top_order = []
+    while queue:
+        node = queue.pop(0)
+        top_order.append(node)
+        for neighbor in graph[node]:
+            in_degrees[neighbor] -= 1
+            if in_degrees[neighbor] == 0:
+                queue.append(neighbor)
+
+    return top_order

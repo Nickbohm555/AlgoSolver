@@ -11,7 +11,7 @@ Functions:
  `quick_sort`: Sorts array by reducing each array by choosing a pivot and sorting accordingly.
 
  `radix_sort`: Sorts array based off the digits.
- 
+
  `counting_sort`: Sorts array based off the pidgeonhole principle.
 
 """
@@ -198,3 +198,80 @@ def counting_sort(arr, exp):
 
     for i in range(array_len):
         arr[i] = output[i]
+
+def two_pointer_sort(arr1, arr2):
+    """
+    Sorts two sorted arrays using a two-pointer algorithm.
+
+    Args:
+        arr1 (array): The first sorted array.
+        arr2 (array): The second sorted array.
+
+    Returns:
+        array: A sorted array that merges the two input arrays.
+    """
+    sorted_arr = []
+    i, j = 0, 0
+
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]:
+            sorted_arr.append(arr1[i])
+            i += 1
+        else:
+            sorted_arr.append(arr2[j])
+            j += 1
+
+    while i < len(arr1):
+        sorted_arr.append(arr1[i])
+        i += 1
+
+    while j < len(arr2):
+        sorted_arr.append(arr2[j])
+        j += 1
+
+    return sorted_arr
+
+def heapify(arr, n, i):
+    """
+    A helper function to create a max heap.
+
+    Args:
+        arr (array): The input array.
+        n (int): The size of the heap.
+        i (int): The index to start heapifying from.
+    """
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+
+    if left < n and arr[i] < arr[left]:
+        largest = left
+
+    if right < n and arr[largest] < arr[right]:
+        largest = right
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+
+def heapsort(arr):
+    """
+    Sorts an input array using heapsort.
+
+    Args:
+        arr (array): The input array to sort.
+
+    Returns:
+        array: The sorted array.
+    """
+    n = len(arr)
+
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+    return arr
