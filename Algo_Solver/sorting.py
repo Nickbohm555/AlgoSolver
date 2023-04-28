@@ -11,7 +11,7 @@ Functions:
  `quick_sort`: Sorts array by reducing each array by choosing a pivot and sorting accordingly.
 
  `radix_sort`: Sorts array based off the digits.
-
+ 
  `counting_sort`: Sorts array based off the pidgeonhole principle.
 
 """

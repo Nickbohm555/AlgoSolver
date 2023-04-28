@@ -27,5 +27,6 @@ My goal is to develop a library in python to help programmers solve a variety of
    sorting.rst
    searching.rst
    graphs.rst
+   tutorial.rst
    contributing.rst
    
