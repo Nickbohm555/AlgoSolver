@@ -29,9 +29,7 @@ def bubble_sort(arr):
     """
     array_len = len(arr)
     for i in range(array_len):
-
         for j in range(0, array_len - i - 1):
-
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
@@ -70,7 +68,6 @@ def merge_sort(arr):
     """
     array_len = len(arr)
     if array_len > 1:
-
         mid = array_len // 2
         left_half = arr[:mid]
         right_half = arr[mid:]
@@ -199,6 +196,7 @@ def counting_sort(arr, exp):
     for i in range(array_len):
         arr[i] = output[i]
 
+
 def two_pointer_sort(arr1, arr2):
     """
     Sorts two sorted arrays using a two-pointer algorithm.
@@ -230,6 +228,7 @@ def two_pointer_sort(arr1, arr2):
         j += 1
 
     return sorted_arr
+
 
 def heapify(arr, n, i):
     """
