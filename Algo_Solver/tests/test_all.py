@@ -6,6 +6,7 @@ sys.path.append('../')
 from AlgoSolver.Algo_Solver.searching import *
 from AlgoSolver.Algo_Solver.sorting import *
 from AlgoSolver.Algo_Solver.graphs import *
+from collections import defaultdict
 
 
 # importing
@@ -166,6 +167,13 @@ class TestMethods(unittest.TestCase):
         result = count_values(head)
 
         # compare the expected and actual results
+
+    def test_bellman_ford(self):
+        """Testing Bellman-Ford algorithm."""
+        graph = {'A': {'B': -1, 'C': 4}, 'B': {'C': 3, 'D': 2, 'E': 2}, 'C': {}, 'D': {'B': 1, 'C': 5}, 'E': {'D': -3}}
+        start = 'A'
+        expected_result = {'A': 0, 'B': -1, 'C': 2, 'D': -2, 'E': 1}
+        result = bellman_ford(graph, start)
         self.assertDictEqual(result, expected_result)
 
 
