@@ -33,7 +33,7 @@ class TestMethods(unittest.TestCase):
             'F': set(['C', 'E']),
         }
         self.assertEqual(bfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
-
+    
     def test_dfs(self):
         """testing dfs."""
         graph = {
@@ -99,6 +99,59 @@ class TestMethods(unittest.TestCase):
             'F': set(['C', 'E']),
         }
         self.assertEqual(find_distance_unweighted_graph(graph, 'A', 'F'), 2)
+    
+    def test_dijkstra(self):
+        """Testing Dijkstra's Algorithm."""
+        graph = {
+        'A': {'B': 3, 'C': 1},
+        'B': {'A': 3, 'C': 7, 'D': 2},
+        'C': {'A': 1, 'B': 7, 'D': 1},
+        'D': {'B': 2, 'C': 1},
+        }
+        expected_output = {'A': 0, 'B': 3, 'C': 1, 'D': 2}
+        self.assertEqual(dijkstra(graph, 'A'), expected_output)
+    
+    def test_linear_search(self):
+        """Testing linear search."""
+        arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+        self.assertEqual(linear_search(arr, 5), 4)
+
+    def test_find_duplicates(self):
+        """Testing find_duplicates."""
+        arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+        self.assertEqual(find_duplicates(arr4), [10])
+
+
+    def test_is_palindrome(self):
+        """Testing test_is_palindrome."""
+        self.assertTrue(is_palindrome("racecar"))
+
+    def test_two_pointer_sort(self):
+        """Testing two_pointer_sort."""
+        arr1 = [1, 3, 5, 7, 9]
+        arr2 = [2, 4, 6, 8, 10]
+        expected_result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        self.assertEqual(two_pointer_sort(arr1, arr2), expected_result)
+
+    def test_topological_sort(self):
+        graph = {
+        'A': ['C', 'D'],
+        'B': ['D', 'E'],
+        'C': ['F'],
+        'D': ['F'],
+        'E': ['G'],
+        'F': ['G'],
+        'G': []
+    }
+        self.assertEqual(topological_sort(graph), ['A', 'B', 'C', 'D', 'E', 'F', 'G'])
+
+    def test_heapsort(self):
+        """Testing heapsort."""
+        arr = [5, 2, 8, 3, 9, 1]
+        expected_result = [1, 2, 3, 5, 8, 9]
+        heapsort(arr)
+        self.assertEqual(arr, expected_result)
+
 
     def test_count_values(self):
         """Testing count_values."""
