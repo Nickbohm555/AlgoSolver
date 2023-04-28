@@ -1,9 +1,26 @@
-"""Searching algorithms."""
+"""
+These API's provides utilities for searching algorithms.
+
+Functions:
+ `binary_search`: Performs binary search on an array to find the index of the number.
+ 
+ `selection_algo`: Performs the selection sort algorithm to find the number associated with the index.
+
+"""
 import random
 
 
 def binary_search(arr, num):
-    """binary search algo."""
+    """
+    Performs binary search on an array given a specifc integer to find.
+
+    Args:
+        arr (array): The array we are searching.
+        num (int): The integer we are looking for.
+
+    Returns:
+        int: The index of the specified number.
+    """
     low = 0
     high = len(arr) - 1
     while low <= high:
@@ -18,7 +35,16 @@ def binary_search(arr, num):
 
 
 def selection_algo(arr, k):
-    """selection algo."""
+    """
+    Performs selection algorithm on an array to find kth smallest value.
+
+    Args:
+        arr (array): An unsorted array.
+        k (int): The index in the array from the end.
+
+    Returns:
+        int: The number of the kth smallest.
+    """
     if len(arr) == 1:
         return arr[0]
     pivot = random.choice(arr)
