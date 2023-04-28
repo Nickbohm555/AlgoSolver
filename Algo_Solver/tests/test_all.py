@@ -100,6 +100,31 @@ class TestMethods(unittest.TestCase):
         }
         self.assertEqual(find_distance_unweighted_graph(graph, 'A', 'F'), 2)
 
+    def test_count_values(self):
+        """Testing count_values."""
+
+        class Node:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
+
+        # create a linked list with values 1 -> 2 -> 1 -> 3 -> 2 -> 1 -> None
+        head = Node(1)
+        head.next = Node(2)
+        head.next.next = Node(1)
+        head.next.next.next = Node(3)
+        head.next.next.next.next = Node(2)
+        head.next.next.next.next.next = Node(1)
+
+        # create the expected dictionary
+        expected_result = {1: 3, 2: 2, 3: 1}
+
+        # count the values in the linked list
+        result = count_values(head)
+
+        # compare the expected and actual results
+        self.assertDictEqual(result, expected_result)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -57,3 +57,24 @@ def find_distance_unweighted_graph(graph, start, end):
                     d[neighbor] = distance + 1
                     queue.append((neighbor, distance + 1))  # Add neighbor with its distance from start
     return -1  # We have explored the entire graph and did not find the destination
+
+
+def count_values(head):
+    """
+    Counts the number of times each value appears in a linked list.
+
+    Args:
+        head (ListNode): The head node of the linked list.
+
+    Returns:
+        dict: A dictionary with keys as values in the linked list and values as the count of occurrences.
+    """
+    counts = {}
+    curr = head
+    while curr:
+        if curr.val not in counts:
+            counts[curr.val] = 1
+        else:
+            counts[curr.val] += 1
+        curr = curr.next
+    return counts
