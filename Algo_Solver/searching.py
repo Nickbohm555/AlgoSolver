@@ -57,6 +57,7 @@ def selection_algo(arr, k):
     else:
         return selection_algo(highs, k - len(lows) - len(pivots))
 
+
 def linear_search(arr, num):
     """
     Performs linear search on an array given a specific integer to find.
@@ -72,6 +73,7 @@ def linear_search(arr, num):
         if arr[i] == num:
             return i
     return -1
+
 
 def find_duplicates(arr):
     """
@@ -94,19 +96,38 @@ def find_duplicates(arr):
 
     return list(duplicates)
 
+
 def is_palindrome(s):
-        """
-        Checks if a given string is a palindrome or not.
+    """
+    Checks if a given string is a palindrome or not.
 
-        Args:
-            s (str): The string to check.
+    Args:
+        s (str): The string to check.
 
-        Returns:
-            bool: True if the string is a palindrome, False otherwise.
-        """
-        s = s.lower()
-        s = ''.join(c for c in s if c.isalnum())
-        return s == s[::-1]
+    Returns:
+        bool: True if the string is a palindrome, False otherwise.
+    """
+    s = s.lower()
+    s = ''.join(c for c in s if c.isalnum())
+    return s == s[::-1]
 
 
+def count_values(head):
+    """
+    Counts the number of times each value appears in a linked list.
 
+    Args:
+        head (ListNode): The head node of the linked list.
+
+    Returns:
+        dict: A dictionary with keys as values in the linked list and values as the count of occurrences.
+    """
+    counts = {}
+    curr = head
+    while curr:
+        if curr.val not in counts:
+            counts[curr.val] = 1
+        else:
+            counts[curr.val] += 1
+        curr = curr.next
+    return counts

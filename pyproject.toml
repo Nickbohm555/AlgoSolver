@@ -61,7 +61,7 @@ ignore = [
 ]
 
 [tool.flake8]
-ignore = ['E203', 'W503', 'F403', 'E402', 'F405', 'E501', 'W293' ]
+ignore = ['E203', 'W503', 'F403', 'E402', 'F405', 'E501', 'W293', 'F811']
 max-line-length=120
 exclude=[
     'Algo_Solver/tests/*'

@@ -33,7 +33,7 @@ class TestMethods(unittest.TestCase):
             'F': set(['C', 'E']),
         }
         self.assertEqual(bfs(graph, 'A'), {'A', 'F', 'C', 'B', 'D', 'E'})
-    
+
     def test_dfs(self):
         """testing dfs."""
         graph = {
@@ -99,18 +99,18 @@ class TestMethods(unittest.TestCase):
             'F': set(['C', 'E']),
         }
         self.assertEqual(find_distance_unweighted_graph(graph, 'A', 'F'), 2)
-    
+
     def test_dijkstra(self):
         """Testing Dijkstra's Algorithm."""
         graph = {
-        'A': {'B': 3, 'C': 1},
-        'B': {'A': 3, 'C': 7, 'D': 2},
-        'C': {'A': 1, 'B': 7, 'D': 1},
-        'D': {'B': 2, 'C': 1},
+            'A': {'B': 3, 'C': 1},
+            'B': {'A': 3, 'C': 7, 'D': 2},
+            'C': {'A': 1, 'B': 7, 'D': 1},
+            'D': {'B': 2, 'C': 1},
         }
         expected_output = {'A': 0, 'B': 3, 'C': 1, 'D': 2}
         self.assertEqual(dijkstra(graph, 'A'), expected_output)
-    
+
     def test_linear_search(self):
         """Testing linear search."""
         arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
@@ -120,7 +120,6 @@ class TestMethods(unittest.TestCase):
         """Testing find_duplicates."""
         arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
         self.assertEqual(find_duplicates(arr4), [10])
-
 
     def test_is_palindrome(self):
         """Testing test_is_palindrome."""
@@ -134,15 +133,7 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(two_pointer_sort(arr1, arr2), expected_result)
 
     def test_topological_sort(self):
-        graph = {
-        'A': ['C', 'D'],
-        'B': ['D', 'E'],
-        'C': ['F'],
-        'D': ['F'],
-        'E': ['G'],
-        'F': ['G'],
-        'G': []
-    }
+        graph = {'A': ['C', 'D'], 'B': ['D', 'E'], 'C': ['F'], 'D': ['F'], 'E': ['G'], 'F': ['G'], 'G': []}
         self.assertEqual(topological_sort(graph), ['A', 'B', 'C', 'D', 'E', 'F', 'G'])
 
     def test_heapsort(self):
@@ -152,6 +143,30 @@ class TestMethods(unittest.TestCase):
         heapsort(arr)
         self.assertEqual(arr, expected_result)
 
+    def test_count_values(self):
+        """Testing count_values."""
+
+        class Node:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
+
+        # create a linked list with values 1 -> 2 -> 1 -> 3 -> 2 -> 1 -> None
+        head = Node(1)
+        head.next = Node(2)
+        head.next.next = Node(1)
+        head.next.next.next = Node(3)
+        head.next.next.next.next = Node(2)
+        head.next.next.next.next.next = Node(1)
+
+        # create the expected dictionary
+        expected_result = {1: 3, 2: 2, 3: 1}
+
+        # count the values in the linked list
+        result = count_values(head)
+
+        # compare the expected and actual results
+        self.assertDictEqual(result, expected_result)
 
 
 if __name__ == "__main__":
