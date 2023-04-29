@@ -168,6 +168,14 @@ class TestMethods(unittest.TestCase):
         # compare the expected and actual results
         self.assertDictEqual(result, expected_result)
 
+    def test_bellman_ford(self):
+        """Testing Bellman-Ford algorithm."""
+        graph = {'A': {'B': -1, 'C': 4}, 'B': {'C': 3, 'D': 2, 'E': 2}, 'C': {}, 'D': {'B': 1, 'C': 5}, 'E': {'D': -3}}
+        start = 'A'
+        expected_result = {'A': 0, 'B': -1, 'C': 2, 'D': -2, 'E': 1}
+        result = bellman_ford(graph, start)
+        self.assertDictEqual(result, expected_result)
+
 
 if __name__ == "__main__":
     unittest.main()

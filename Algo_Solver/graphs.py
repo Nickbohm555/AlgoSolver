@@ -177,3 +177,34 @@ def topological_sort(graph):
                 queue.append(neighbor)
 
     return top_order
+
+
+def bellman_ford(graph, start):
+    """
+    Finds the shortest path from a starting node to all other nodes
+    in a weighted graph with negative edge weights.
+
+    Args:
+        graph (dict): The weighted graph represented as a dictionary of dictionaries.
+        start (any): The starting node for the algorithm.
+
+    Returns:
+        dict: A dictionary of shortest path distances for each node in the graph.
+    """
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+
+    for _ in range(len(graph) - 1):
+        for node in graph:
+            for neighbor in graph[node]:
+                new_distance = distances[node] + graph[node][neighbor]
+                if new_distance < distances[neighbor]:
+                    distances[neighbor] = new_distance
+
+    # Check for negative weight cycles
+    for node in graph:
+        for neighbor in graph[node]:
+            if distances[node] + graph[node][neighbor] < distances[neighbor]:
+                raise ValueError("Negative weight cycle detected")
+
+    return distances
