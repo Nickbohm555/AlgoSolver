@@ -6,7 +6,7 @@ AlgoSolver allows developers to implement useful algorithms as a black box.
 [![](https://img.shields.io/github/issues/nickbohm555/AlgoSolver)](https://github.com/Nickbohm555/AlgoSolver/issues)
 [![Build Status](https://github.com/Nickbohm555/AlgoSolver/actions/workflows/build.yml/badge.svg)](https://github.com/Nickbohm555/AlgoSolver/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/nickbohm555/AlgoSolver/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Nickbohm555/AlgoSolver/tree/main)
-[![PyPI](https://img.shields.io/pypi/v/AlgoSolver)](https://pypi.org/project/AlgoSolver/0.1.2/)
+[![PyPI](https://img.shields.io/pypi/v/AlgoSolver)](https://pypi.org/project/AlgoSolver/)
 
 ## Overview
 

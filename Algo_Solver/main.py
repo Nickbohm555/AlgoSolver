@@ -6,5 +6,5 @@ Functions:
 
 """
 __author__ = "Nicholas Bohm"
-__version__ = "0.1.2"
+__version__ = "0.1.4"
 __license__ = "MIT"

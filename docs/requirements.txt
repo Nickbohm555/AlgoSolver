@@ -1,4 +1,4 @@
-AlgoSolver==0.1.2
+AlgoSolver==0.1.4
 furo==2023.3.27
 <<<<<<< HEAD
 sphinx_rtd_theme>=1.2.0
