@@ -14,6 +14,12 @@ Functions:
  
  `counting_sort`: Sorts array based off the pidgeonhole principle.
 
+ `selection_sort`: Sorts array by selecting the minimum unsorted element and sorting individually.
+
+ `cycle_sort`: Sorts array by dividing array into cycles and performing swaps.
+
+ `cocktail_sort`: Sorts array improves on bubble sort with less unnecessary iterations.
+
 """
 
 
@@ -273,4 +279,87 @@ def heapsort(arr):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
 
+    return arr
+
+
+def selection_sort(arr):
+    """
+    This algorithm performs selection sort on an array to sort it.
+
+    Args:
+        arr (array): The array we are given.
+
+    Returns:
+        array: The sorted version of the array.
+    """
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+
+def cycle_sort(arr):
+    """
+    This algorithm performs cycle sort on an array to sort it.
+
+    Args:
+        arr (array): The array we are given.
+
+    Returns:
+        array: The sorted version of the array.
+    """
+    for cycleStart in range(0, len(arr) - 1):
+        item = arr[cycleStart]
+        pos = cycleStart
+        for i in range(cycleStart + 1, len(arr)):
+            if arr[i] < item:
+                pos += 1
+        if pos == cycleStart:
+            continue
+        while item == arr[pos]:
+            pos += 1
+        arr[pos], item = item, arr[pos]
+        while pos != cycleStart:
+            pos = cycleStart
+            for i in range(cycleStart + 1, len(arr)):
+                if arr[i] < item:
+                    pos += 1
+            while item == arr[pos]:
+                pos += 1
+            arr[pos], item = item, arr[pos]
+    return arr
+
+
+def cocktail_sort(arr):
+    """
+    This algorithm performs cocktail sort on an array to sort it.
+
+    Args:
+        arr (array): The array we are given.
+
+    Returns:
+        array: The sorted version of the array.
+    """
+    n = len(arr)
+    swapped = True
+    start = 0
+    end = n - 1
+    while swapped:
+        swapped = False
+        for i in range(start, end):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+        if not swapped:
+            break
+        swapped = False
+        end = end - 1
+        for i in range(end - 1, start - 1, -1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+        start = start + 1
     return arr
