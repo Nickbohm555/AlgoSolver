@@ -133,6 +133,7 @@ def dijkstra(graph, start):
     queue = [(0, start)]
 
     while queue:
+
         current_distance, current_node = heapq.heappop(queue)
 
         if current_distance > distance[current_node]:
