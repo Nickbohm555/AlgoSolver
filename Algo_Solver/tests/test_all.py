@@ -66,6 +66,18 @@ class TestMethods(unittest.TestCase):
         """insertin sort test."""
         self.assertEqual(insertion_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
+    def test_selection_sort(self):
+        """selection sort test."""
+        self.assertEqual(selection_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
+    def test_cycle_sort(self):
+        """cycle sort test."""
+        self.assertEqual(cycle_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
+    def test_cocktail_sort(self):
+        """cocktail sort test."""
+        self.assertEqual(cocktail_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
     def test_bfs_dfs_integration(self):
         """insertin sort test."""
         # Create a sample graph to test the integration between bfs and dfs
