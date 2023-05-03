@@ -14,6 +14,12 @@ Functions:
  
  `counting_sort`: Sorts array based off the pidgeonhole principle.
 
+ `shell_sort`: Sorts array like insertion sort, but with the exchange of far items.
+
+ `bingo_sort`: Sorts array like selection sort, but with one pass for each distinct value.
+
+ `pigeonhole_sort`: Sorts array like counting sort, but moves items to a bucket first.
+
 """
 
 
@@ -272,5 +278,92 @@ def heapsort(arr):
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
+
+    return arr
+
+
+def shell_sort(arr):
+    """
+    Sorts an input array using shell sort.
+
+    Args:
+        arr (array): The input array to sort.
+
+    Returns:
+        array: The sorted array.
+    """
+    n = len(arr)
+    interval = n // 2
+    while interval > 0:
+        for i in range(interval, n):
+            temp = arr[i]
+            j = i
+            while j >= interval and arr[j - interval] > temp:
+                arr[j] = arr[j - interval]
+                j -= interval
+
+            arr[j] = temp
+        interval //= 2
+
+    return arr
+
+
+def bingo_sort(arr):
+    """
+    Sorts an input array using bingo sort.
+
+    Args:
+        arr (array): The input array to sort.
+
+    Returns:
+        array: The sorted array.
+    """
+    n = len(arr)
+    bingo = min(arr)
+    largest = max(arr)
+    nextBingo = largest
+    nextPos = 0
+
+    while bingo < nextBingo:
+        startPos = nextPos
+        for i in range(startPos, n):
+            if arr[i] == bingo:
+                arr[i], arr[nextPos] = arr[nextPos], arr[i]
+                nextPos += 1
+
+            elif arr[i] < nextBingo:
+                nextBingo = arr[i]
+
+        bingo = nextBingo
+        nextBingo = largest
+
+    return arr
+
+
+def pigeonhole_sort(arr):
+    """
+    Sorts an input array using pigeonhole sort.
+
+    Args:
+        arr (array): The input array to sort.
+
+    Returns:
+        array: The sorted array.
+    """
+    my_min = min(arr)
+    my_max = max(arr)
+    size = my_max - my_min + 1
+    holes = [0] * size
+
+    for x in arr:
+        assert type(x) is int, "integers only please"
+        holes[x - my_min] += 1
+
+    i = 0
+    for count in range(size):
+        while holes[count] > 0:
+            holes[count] -= 1
+            arr[i] = count + my_min
+            i += 1
 
     return arr
