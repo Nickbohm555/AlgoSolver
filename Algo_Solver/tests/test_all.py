@@ -63,8 +63,20 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(bucket_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_insertion_sort(self):
-        """insertin sort test."""
+        """insertion sort test."""
         self.assertEqual(insertion_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
+    def test_shell_sort(self):
+        """shell sort test."""
+        self.assertEqual(shell_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
+    def test_bingo_sort(self):
+        """bingo sort test."""
+        self.assertEqual(bingo_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
+
+    def test_pigeonhole_sort(self):
+        """pigeonhole sort test."""
+        self.assertEqual(pigeonhole_sort([15, 3, 222, 11, 8]), [3, 8, 11, 15, 222])
 
     def test_bfs_dfs_integration(self):
         """insertin sort test."""
